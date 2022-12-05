@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fractol.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asouchet <marvin@42lausanne.ch>            +#+  +:+       +#+        */
+/*   By: asouchet <asouchet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 07:15:58 by asouchet          #+#    #+#             */
-/*   Updated: 2022/11/28 07:16:07 by asouchet         ###   ########.fr       */
+/*   Updated: 2022/12/05 21:21:06 by asouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,14 @@ typedef struct	s_data {
 typedef struct	s_coor {
 	int	x;
 	int	y;
-	int w;
+	int w; 
 	int	h;
 } 				t_coor;
+
+typedef struct	s_complex {
+	double a;
+	double b;
+}				t_complex;
 
 int main();
 void	my_mlx_pixel_put(t_data *data, int x, int y, int color);
