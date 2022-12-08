@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: asouchet <marvin@42lausanne.ch>            +#+  +:+       +#+         #
+#    By: asouchet <asouchet@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/28 06:04:44 by asouchet          #+#    #+#              #
-#    Updated: 2022/11/28 06:04:46 by asouchet         ###   ########.fr        #
+#    Updated: 2022/12/08 18:10:07 by asouchet         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ CFLAGS = -Wall -Wextra -Werror -lm -D MAIN
 CC = gcc
 SRC_PATH = ./
 OPTIONS = -I./libft -I./mlx -g3 -fsanitize=address 
-SRC = minilibx_test.c
+SRC = main.c location.c complex.c color.c mandelbrot.c hook.c
 SRCS = $(addprefix $(SRC_PATH),$(SRC))
 OBJ = $(SRCS:.c=.o)
 
