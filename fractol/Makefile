@@ -6,7 +6,7 @@
 #    By: asouchet <asouchet@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/28 06:04:44 by asouchet          #+#    #+#              #
-#    Updated: 2022/12/08 18:10:07 by asouchet         ###   ########.fr        #
+#    Updated: 2022/12/27 14:45:43 by asouchet         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,10 +32,10 @@ $(MINILIB):
 			make -C $(MINILIB)
 
 %.o: %.c
-	$(CC) -Wall -Wextra -Werror -Imlx -o3 -c $< -o $@
+	$(CC) -Wall -Wextra -Werror -Imlx -o3 -c $< -o $@ $(OPTIONS)
 
 $(NAME): $(OBJ)
-	$(CC) -Lmlx -lmlx -framework OpenGL -framework AppKit $(OBJ) -o $(NAME)
+	$(CC) -Lmlx -lmlx -framework OpenGL -framework AppKit $(OBJ) -o $(NAME) $(OPTIONS)
 
 unit: 	$(OBJ) $(LIBFT)
 	$(CC) $(OBJ) -DUNIT -D UNIT -fsanitize=address -I./libft  -Lmlx -lmlx -Llibft -lft -framework OpenGL -framework AppKit -o unit
