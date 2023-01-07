@@ -6,7 +6,7 @@
 #    By: asouchet <asouchet@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/28 06:04:44 by asouchet          #+#    #+#              #
-#    Updated: 2022/12/27 14:45:43 by asouchet         ###   ########.fr        #
+#    Updated: 2023/01/07 20:02:38 by asouchet         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,8 +16,8 @@ MINILIB = minilib
 CFLAGS = -Wall -Wextra -Werror -lm -D MAIN
 CC = gcc
 SRC_PATH = ./
-OPTIONS = -I./libft -I./mlx -g3 -fsanitize=address 
-SRC = main.c location.c complex.c color.c mandelbrot.c hook.c
+OPTIONS = -I./libft -I./mlx -g3 -O2 -fsanitize=address 
+SRC = main.c location.c complex.c color.c mandelbrot.c hook.c julia.c
 SRCS = $(addprefix $(SRC_PATH),$(SRC))
 OBJ = $(SRCS:.c=.o)
 
@@ -32,7 +32,7 @@ $(MINILIB):
 			make -C $(MINILIB)
 
 %.o: %.c
-	$(CC) -Wall -Wextra -Werror -Imlx -o3 -c $< -o $@ $(OPTIONS)
+	$(CC) -Wall -Wextra -Werror -Imlx -c $< -o $@ $(OPTIONS)
 
 $(NAME): $(OBJ)
 	$(CC) -Lmlx -lmlx -framework OpenGL -framework AppKit $(OBJ) -o $(NAME) $(OPTIONS)
